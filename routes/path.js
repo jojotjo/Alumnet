@@ -3,7 +3,8 @@ const router = express.Router();
 
 const { login, register } = require("../controllers/auth");
 
-router.post("/register", register);
-router.post("/login", login);
+// Corrected routes
+router.route("/register").post(register);  // Changed from GET to POST
+router.route("/login").post(login);
 
 module.exports = router;
