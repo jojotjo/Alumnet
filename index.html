@@ -3,9 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Why Choose Us</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=DM+Serif+Display&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: 'EB Garamond', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Transparent black */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+          }
+      
+          .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+          }
+      
+          .navbar a:hover {
+            color: #f0a500; /* Highlight color */
+            transform: scale(1.1);
+          }
+      
+          .navbar .logo {
+          /* font-size: 30px; */
+            font-weight: bolder;
+            height: 68px;
+            font-family: 'DM Serif Text', serif;
+            color: #f0a500;
+            transition: transform 0.3s;
+          }
+          .navbar .logo img{
+            height: 60px;
+          }
+          .navbar .logo:hover{
+              transform: scale(1.1);
+          }
+      
+          /* Hero Section */
+          .hero {
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url('./frontend/images/1st.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background-color: #111;
+          }
+      
+          .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5); /* Overlay */
+            z-index: 1;
+          }
+      
+          .hero * {
+            position: relative;
+            z-index: 2;
+          }
+      
+          .hero h1 {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'DM Serif Text', serif;
+          }
+      
+          .hero p {
+            font-size: 25px;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+          }
+      
+          .hero button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+      
+          .hero button:hover {
+            background-color: #f0f0f0;
+          }
+
+        .text-section {
+            text-align: left;
+        }
+
+        .mission-title {
+            color: #d1a30b;
+            font-weight: bold;
+            font-size: 4rem; /* Scalable Font */
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .mission-text {
+            font-size: 2.2rem;
+            font-weight: 500;
+            max-width: 500px;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .image-wrapper img {
+            border-radius: 20px;
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .text-section {
+                text-align: center;
+            }
+
+            .mission-title {
+                font-size: 1.8rem;
+            }
+
+            .mission-text {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+        }
+        
+        .three .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'DM Serif Text', serif;
+        }
+
+       .three .section-subtitle {
+            font-size: 18px;
+            color: #777;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .three .card {
+            border: 1px solid transparent;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .three .card:hover {
+            transform: scale(1.05);
+            border: 1px solid #ddd;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .three .card img {
+            border-radius: 15px 15px 0 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .three .card:hover img {
+            transform: scale(1.08);
+        }
+
+        .three .card-body {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .three .step-number {
+            font-size: 14px;
+            color: #a49f3c;
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .three .step-title {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .three .step-description {
+            font-size: 16px;
+            color: #666;
+            font-family: 'EB Garamond', serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 28px;
+            }
+
+            .section-subtitle {
+                font-size: 20px;
+            }
+
+            .step-title {
+                font-size: 20px;
+            }
+
+            .step-description {
+                font-size: 18px;
+            }
+        }
+        /* Section Styling */
+        .section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 40px;
+        }
+
+        /* Card Styling */
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            width: 333px;
+            height: 200px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Testimonials Styling */
+        .testimonial-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-name {
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'DM Serif Text', serif;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: #555;
+            font-family: 'EB Garamond', serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            .card-text, .testimonial-text {
+                font-size: 0.9rem;
+            }
+
+            .testimonial-name {
+                font-size: 14px;
+            }
+        }
+        .footer {
+            background-color: #111; /* Dark background */
+            color: #888; /* Light grey text */
+            padding: 40px 0;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffd700; /* Gold/yellow hover effect */
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            width: 24px;
+            margin-right: 8px;
+        }
+
+        .footer h5 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>hello</h1>
+
+    <nav class="navbar">
+        <div class="logo"><img src="./frontend/images/logo1.png"></div>
+        <div>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    
+      <!-- Hero Section -->
+      <div class="hero" id="home">
+        <p>Empower Your Finances</p>
+        <h1>Master your financial future.</h1>
+        <button>Get Started Now</button>
+      </div>
+
+    <div class="container-fluid mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-section">
+                <h2 class="mission-title">Our Mission</h2>
+                <p class="mission-text">
+                    We aim to educate and empower individuals to achieve financial independence and security.
+                </p>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="image-wrapper">
+                    <img src="./frontend/images/Mission Image  --lummi.png" alt="Person Analyzing Stock Market" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="container text-center mt-5 three ">
+        <!-- Section Title -->
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Understand the steps to financial literacy.</p>
+    
+        <!-- Steps Section -->
+        <div class="row mt-4">
+            <!-- Step 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./frontend/images/Image  --lummi.png" alt="Learn Basics" class="img-fluid">
+                    <div class="card-body">
+                        <p class="step-number">Step 1</p>
+                        <h5 class="step-title">Learn Basics</h5>
+                        <p class="step-description">Get a solid foundation in financial principles.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Step 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./frontend/images/Image  --lummi2.png" alt="Build Skills" class="img-fluid">
+                    <div class="card-body">
+                        <p class="step-number">Step 2</p>
+                        <h5 class="step-title">Build Skills</h5>
+                        <p class="step-description">Develop practical skills for managing money.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Step 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./frontend/images/Image  --lummi 3.png" alt="Achieve Goals" class="img-fluid">
+                    <div class="card-body">
+                        <p class="step-number">Step 3</p>
+                        <h5 class="step-title">Achieve Goals</h5>
+                        <p class="step-description">Set and reach your financial objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br>
+
+    <!-- Why Choose Us Section -->
+    <div class="section">
+        <h2>Why Choose Us</h2>
+        <p>Your Path to Financial Freedom</p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="./frontend/images/4th-1.png" class="card-img-top mt-2" alt="Expert Guidance">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Expert Guidance</h3>
+                            <p class="card-text">Learn from industry experts with years of experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="./frontend/images/4th-2.png" class="card-img-top mt-2" alt="Interactive Tools">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Interactive Tools</h3>
+                            <p class="card-text">Utilize our tools to track and manage your finances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="section">
+        <h2>Testimonials</h2>
+        <p>See what our users have to say about us.</p>
+        <div class="container">
+            <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="./frontend/images/Image --lummi --category=avatars1.png" alt="Jane Doe" class="testimonial-img">
+                        <h5 class="testimonial-name">Jane Doe, Entrepreneur</h5>
+                        <p class="testimonial-text">"This platform transformed my financial life!"</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="./frontend/images/Image --lummi --category=avatars2.png" alt="John Smith" class="testimonial-img">
+                        <h5 class="testimonial-name">John Smith, Freelancer</h5>
+                        <p class="testimonial-text">"I now feel confident about my financial future."</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="./frontend/images/Image --lummi --category=avatars3.png" alt="Emily Davis" class="testimonial-img">
+                        <h5 class="testimonial-name">Emily Davis, Student</h5>
+                        <p class="testimonial-text">"A must-have resource for anyone wanting financial literacy."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-12">
+        <h1 class="text-5xl font-bold text-gray-800">Pricing</h1>
+        <p class="text-gray-600 mt-4 text-lg">Choose the plan that best suits your financial learning needs.</p>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Pricing Card Component -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300">
+                <div class="text-center">
+                    <i class="fas fa-plane text-3xl text-blue-500"></i>
+                    <h2 class="text-3xl font-bold mt-4">Basic</h2>
+                    <p class="text-gray-600 mt-2">Ideal for beginners</p>
+                    <div class="mt-6">
+                        <span class="text-5xl font-bold">$9</span>
+                        <span class="text-gray-600">/mo</span>
+                    </div>
+                </div>
+                <ul class="mt-6 space-y-4 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Access to Articles</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 5 GB Storage</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Basic Support</li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <button class="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600">Join Now</button>
+                </div>
+            </div>
+            <!-- Pro Plan -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-yellow-500 hover:scale-105 transition-transform duration-300">
+                <div class="text-center">
+                    <i class="fas fa-rocket text-3xl text-yellow-500"></i>
+                    <h2 class="text-3xl font-bold mt-4">Pro</h2>
+                    <p class="text-gray-600 mt-2">Best for small businesses</p>
+                    <div class="mt-6">
+                        <span class="text-5xl font-bold">$14</span>
+                        <span class="text-gray-600">/mo</span>
+                    </div>
+                </div>
+                <ul class="mt-6 space-y-4 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Unlimited Projects</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Unlimited Storage</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 24/7 Support</li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <button class="px-6 py-3 bg-yellow-500 text-white font-bold rounded-lg shadow-md hover:bg-yellow-600">Upgrade Now</button>
+                </div>
+            </div>
+            <!-- Enterprise Plan -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300">
+                <div class="text-center">
+                    <i class="fas fa-building text-3xl text-gray-700"></i>
+                    <h2 class="text-3xl font-bold mt-4">Enterprise</h2>
+                    <p class="text-gray-600 mt-2">Perfect for individuals and freelancers</p>
+                    <div class="mt-6">
+                        <span class="text-5xl font-bold">$19</span>
+                        <span class="text-gray-600">/mo</span>
+                    </div>
+                </div>
+                <ul class="mt-6 space-y-4 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Dedicated Manager</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Advanced Analytics</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Customizable Solutions</li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <button class="px-6 py-3 border-2 border-gray-700 text-gray-700 font-bold rounded-lg hover:bg-gray-700 hover:text-white">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Slogan -->
+                <div class="col-md-4">
+                    <div class="footer-logo">
+                        <img src="./frontend/images/logo1.png" alt="Logo">
+                        <span class="fw-bold text-light">GrowC</span>
+                    </div>
+                    <p class="mt-2 text-secondary"></p>
+                </div>
+
+                <!-- Company Links -->
+                <div class="col-md-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+
+                <!-- Features Links -->
+                <div class="col-md-2">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Speed</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-md-2">
+                    <h5>Social</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Threads</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="col-md-2">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        <!-- document.addEventListener("DOMContentLoaded", () => {
+            fetch("/api/financial-data")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("stock-market").innerText = Stock Market: ${data.stockMarket.index} - ${data.stockMarket.value} (${data.stockMarket.change});
+                    document.getElementById("crypto").innerText = Crypto: BTC ${data.crypto.bitcoin}, ETH ${data.crypto.ethereum};
+                    document.getElementById("currency").innerText = Currency: USD/EUR ${data.currencyExchange.USD_TO_EUR}, USD/GBP ${data.currencyExchange.USD_TO_GBP};
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        }); -->
+    </script>
+
 </body>
 </html>
